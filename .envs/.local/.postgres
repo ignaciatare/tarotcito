@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=tarot
+POSTGRES_USER=nnVfCLUXzRVmTkiMwXcXRlHqkhqqQvma
+POSTGRES_PASSWORD=0SL5SdFbHgLi4YBxSGMWakBhemhwRwRehbBEUiYe0Wz3DYqW6VsljgXvk7nzFTn5
