@@ -12,4 +12,4 @@ class Carta(models.Model):
     imagen = models.ImageField()
 
     def __str__(self):
-        return self.Carta
+        return self.nombre
