@@ -7,6 +7,6 @@ from .models import Carta
 
 
 def index(request):
-    tirada = Carta.objects.order_by("?")[:3]    
+    tirada = Carta.objects.order_by("?")[:3] 
 
     return HttpResponse(tirada)
