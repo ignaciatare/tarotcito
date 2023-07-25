@@ -55,7 +55,7 @@
                 aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <img src="static/images/tarot.png" alt="iconcito" height="50">
+        <img src="{% static 'images/tarot.png' %}" alt="iconcito" height="50">
         <a class="navbar-brand" href="{% url 'home' %}">El Tarotcito</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -69,7 +69,7 @@
               <a class="nav-link" href="{% url 'catalogo' %}">Las Cartas</a>
             </li>            
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">Sobre mí</a>
+              <a class="nav-link" href="{% url 'about' %}">Créditos</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">

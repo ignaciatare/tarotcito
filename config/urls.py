@@ -19,7 +19,7 @@ urlpatterns = [
     path("tirada/", TemplateView.as_view(template_name="pages/tirada.html"), name="tirada"),
     #path("tirada/", include("tarot.carta.urls")),
 
-    #path("catalogo/", )
+    path("catalogo/", TemplateView.as_view(template_name="pages/catalogo.html"), name="catalogo"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -31,17 +31,17 @@ if settings.DEBUG:
         path(
             "400/",
             default_views.bad_request,
-            kwargs={"exception": Exception("Bad Request!")},
+            kwargs={"exception": Exception("Malo tu pedido")},
         ),
         path(
             "403/",
             default_views.permission_denied,
-            kwargs={"exception": Exception("Permission Denied")},
+            kwargs={"exception": Exception("No hay permiso para ver esta página")},
         ),
         path(
             "404/",
             default_views.page_not_found,
-            kwargs={"exception": Exception("Page not Found")},
+            kwargs={"exception": Exception("Página no existe, búscala en el limbo")},
         ),
         path("500/", default_views.server_error),
     ]

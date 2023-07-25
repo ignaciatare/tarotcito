@@ -1,3 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div> 
+    <h2>Sobre esta página</h2>
+    <p>El tarotcito es un esfuerzo de programación desarrollado inicialmente para el ramo </p>
+
+    <img scr="{% static './images/014.png' %}" alt="templanza" height="450">
+</div>
+<b>Tecnologías y agradecimientos</b>
+<ul>
+    <li>Se usó Python, html, css y javascript</li>
+    <li>La estructura de esta página web se armó con <a href="https://github.com/cookiecutter/cookiecutter-django">el cookiecutter de Django</a></li>
+    <li>Nada sería posible sin la <a href="https://docs.djangoproject.com/">documentación de Django</a></li>
+    <li>El espectacular mazo inicial ("Mazo Coni") es de la artista y diseñadora <a href="https://www.instagram.com/consaravena/">Constanza Aravena</a> </li>
+    <li>Agradecimientos infinitos a <a href="https://verasativa.com/">Vera Sativa</a>, por ayudarme a escribir mejor código</li>
+ </ul>
+ 
+<h2>Sobre mí</h2>
+<p>Me llamo Ignacia Taré, soy programadora y fan del tarot. </p>
+
+{% endblock content %}
 
 

@@ -30,3 +30,6 @@ class Carta(models.Model):
     
     #def displayImagen(request):
     #    return mark_safe(Carta.imagen)
+
+
+ 
