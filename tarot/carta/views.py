@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from .models import Carta
 
 
-def index(request):
+def miTirada(request):
     tirada = Carta.objects.order_by("?")[:3] 
 
     return HttpResponse(tirada)

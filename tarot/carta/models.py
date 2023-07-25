@@ -28,8 +28,5 @@ class Carta(models.Model):
     def __str__(self):
         return self.nombre
     
-    #def display_imagen(request):
-    #    return render(request,)
-
-    #def displayImagen(self):
+    #def displayImagen(request):
     #    return mark_safe(Carta.imagen)

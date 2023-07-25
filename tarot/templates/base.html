@@ -3,6 +3,8 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% load static %}
 
+
+
 <html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="utf-8" />
@@ -53,34 +55,41 @@
                 aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{% url 'home' %}">Tarot</a>
+        <img src="static/images/tarot.png" alt="iconcito" height="50">
+        <a class="navbar-brand" href="{% url 'home' %}">El Tarotcito</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">Home <span class="visually-hidden">(current)</span></a>
+              <a class="nav-link" href="{% url 'home' %}">Inicio <span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-link" href="{% url 'tirada' %}">Tirada</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'catalogo' %}">Las Cartas</a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">Sobre mí</a>
             </li>
             {% if request.user.is_authenticated %}
               <li class="nav-item">
                 <a class="nav-link"
-                   href="{% url 'users:detail' request.user.username %}">{% translate "My Profile" %}</a>
+                   href="{% url 'users:detail' request.user.username %}">Mi perfil</a>
               </li>
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a>
+                <a class="nav-link" href="{% url 'account_logout' %}">Cerrar sesión</a>
               </li>
             {% else %}
               {% if ACCOUNT_ALLOW_REGISTRATION %}
                 <li class="nav-item">
                   {# URL provided by django-allauth/account/urls.py #}
-                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
+                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">Registro</a>
                 </li>
               {% endif %}
               <li class="nav-item">
                 {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
+                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">Entrar</a>
               </li>
             {% endif %}
           </ul>
@@ -101,7 +110,8 @@
       {% endfor %}
     {% endif %}
     {% block content %}
-      <p>Use this document as a way to quick start any new project.</p>
+ 
+
     {% endblock content %}
   </div>
   <!-- /container -->
