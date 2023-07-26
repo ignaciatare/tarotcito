@@ -16,10 +16,10 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
    
     #PRUEBA CON TIRADA
-    path("tirada/", TemplateView.as_view(template_name="pages/tirada.html"), name="tirada"),
-    #path("tirada/", include("tarot.carta.urls")),
+    #path("tirada/", TemplateView.as_view(template_name="pages/tirada.html"), name="tirada"),
+    path("tirada/", include("tarot.carta.urls")),
 
-    path("catalogo/", TemplateView.as_view(template_name="pages/catalogo.html"), name="catalogo"),
+    path("catalogo/", include("tarot.carta.urls")),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -41,7 +41,7 @@ if settings.DEBUG:
         path(
             "404/",
             default_views.page_not_found,
-            kwargs={"exception": Exception("Página no existe, búscala en el limbo")},
+            kwargs={"exception": Exception("Página no existe, búscala en el")},
         ),
         path("500/", default_views.server_error),
     ]
