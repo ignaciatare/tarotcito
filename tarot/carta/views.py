@@ -4,10 +4,12 @@ from django.shortcuts import render
 from .models import Carta
 
 
-def index(request):
+def tirada3(request):
     tirada = Carta.objects.order_by("?")[:3] 
-    return HttpResponse(tirada)
+    context = {'cartas': tirada}
+    return render(request, 'pages/tirada.html', context)
 
 def elCatalogo(request):
-    catalogo = Carta.objects.all()
-    return render(request, 'templates/pages/catalogo.html', {'catalogo': catalogo})    
+    cartas = Carta.objects.all()
+    context = {'cartas': cartas}
+    return render(request, 'pages/catalogo.html', context)

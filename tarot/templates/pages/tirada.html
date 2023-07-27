@@ -1,6 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+    {% load static %}
+<style>
+    li img {
+        width: 200px; 
+        height: auto; 
+        max-width: 100%; 
+    }
+    ul {
+        column-count: 3;
+      }
+</style>
+</head>
+<html>
+<body>
+    <h2>La tirada de 3 cartas</h2>
+    <br>
+
+    <ul>
+        {% for carta in cartas %}
+            <li>
+                <img src="{{ carta.imagen.url }}" alt="{{ carta.nombre }}">
+                <p><b> {{ carta.numero }} - {{ carta.nombre }} </b></p>
+                <p>Descripción: {{ carta.descripcion }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
 
 
 {% endblock content %}

@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {{ catalogo }}
 
+<head>
+    {% load static %}
+<style>
+   ul img {
+        width: 300px; 
+        height: auto; 
+        max-width: 100%; 
+    }
+    ul {
+        column-count: 3;
+      }
+</style>
+</head>
+
+<h2>Las Cartas</h2>
+<h3>Arcanos Mayores:</h3>
+<div class="row">    
+    <ul>
+        {% for carta in cartas %}
+
+                <img src="{{ carta.imagen.url }}" alt="{{ carta.nombre }}">
+                <p>{{ carta.numero }} - {{ carta.nombre }}</p>
+
+        {% endfor %}
+    </ul>
+</div>
 {% endblock content %}

@@ -26,10 +26,8 @@ class Carta(models.Model):
     imagen = models.ImageField()
 
     def __str__(self):
-        return self.nombre
+        return f"{self.numero} - {self.nombre}"
     
-    #def displayImagen(request):
-    #    return mark_safe(Carta.imagen)
-
-
+    class Meta:
+        ordering = ['numero']
  
