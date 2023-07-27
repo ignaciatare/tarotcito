@@ -18,14 +18,19 @@
 
 <h2>Las Cartas</h2>
 <h3>Arcanos Mayores:</h3>
-<div class="row">    
-    <ul>
-        {% for carta in cartas %}
-
-                <img src="{{ carta.imagen.url }}" alt="{{ carta.nombre }}">
-                <p>{{ carta.numero }} - {{ carta.nombre }}</p>
-
-        {% endfor %}
-    </ul>
-</div>
+<div class="container">
+    <div class="row">
+      {% for carta in cartas %}
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src="{{ carta.imagen.url }}" class="card-img-top" alt="{{ carta.nombre }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ carta.numero }} - {{ carta.nombre }}</h5>
+              <p class="card-text">{{ carta.descripcion }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock content %}
