@@ -4,8 +4,8 @@
 <head>
     {% load static %}
 <style>
-    li img {
-        width: 200px; 
+    ul img {
+        width: 250px; 
         height: auto; 
         max-width: 100%; 
     }
@@ -21,11 +21,11 @@
 
     <ul>
         {% for carta in cartas %}
-            <li>
+
                 <img src="{{ carta.imagen.url }}" alt="{{ carta.nombre }}">
                 <p><b> {{ carta.numero }} - {{ carta.nombre }} </b></p>
-                <p>Descripción: {{ carta.descripcion }}</p>
-            </li>
+                <p> <u>Descripción:</u> {{ carta.descripcion }}</p>
+
         {% endfor %}
     </ul>
 
