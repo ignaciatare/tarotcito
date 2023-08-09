@@ -10,6 +10,18 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["example.com"])
 
 # DATABASES
 # ------------------------------------------------------------------------------
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "tarotcito",
+        "USER": "igna",
+        "PASSWORD": "Lautaro@361",
+        "HOST": "tarotcito.postgres.database.azure.com",
+        "PORT": "5432",
+    }
+}
+
+
 DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # noqa: F405
 
 # CACHES
